@@ -10,7 +10,12 @@ https://git-scm.com/docs/gitrepository-layout
 https://git-scm.com/docs/git#_git_commands
 https://git-scm.com/docs/git-mergetool
 
-on [git config](./.git/config):
+```
+git config filter.base64.clean 'base64 -i %f'
+git config filter.base64.smudge 'base64 -Di %f'
+```
+
+or, directly on [git config](./.git/config):
 
 ```
 [filter "base64"]
