@@ -9,3 +9,14 @@ https://github.com/tj/git-extras/tree/master/bin
 https://git-scm.com/docs/gitrepository-layout
 https://git-scm.com/docs/git#_git_commands
 https://git-scm.com/docs/git-mergetool
+
+on [git config](./.git/config):
+
+```
+[filter "base64"]
+	clean = base64 -i %f
+	smudge = base64 -Di %f
+[filter "secrets"]
+	clean = ./secrets-filter.js clean %f
+	smudge = ./secrets-filter.js smudge %f
+```
